@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners for download buttons (assuming you have buttons with these ids)
     const androidButton = document.getElementById('androidDownload');
-    const androidtopButton = document.getElementById('androidtopDownload');
+    // const androidtopButton = document.getElementById('androidtopDownload');
     const androidbottomButton = document.getElementById('androidbottomDownload');
     const iosButton = document.getElementById('iosDownload');
 
@@ -174,20 +174,20 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Element with id androidDownload not found.');
     }
 
-    if (androidtopButton) {
-        androidtopButton.addEventListener('click', function() {
-            const device = detectDevice();
-            if (device === 'android') {
-                DownSoft();
-            } else if (device === 'ios') {
-                showModal('Your phone is an iOS device. Please choose the iOS download button.');
-            } else {
-                showModal('Unable to detect device type.');
-            }
-        });
-    } else {
-        console.error('Element with id androidtopDownload not found.');
-    }
+    // if (androidtopButton) {
+    //     androidtopButton.addEventListener('click', function() {
+    //         const device = detectDevice();
+    //         if (device === 'android') {
+    //             DownSoft();
+    //         } else if (device === 'ios') {
+    //             showModal('Your phone is an iOS device. Please choose the iOS download button.');
+    //         } else {
+    //             showModal('Unable to detect device type.');
+    //         }
+    //     });
+    // } else {
+    //     console.error('Element with id androidtopDownload not found.');
+    // }
 
     if (androidbottomButton) {
         androidbottomButton.addEventListener('click', function() {
