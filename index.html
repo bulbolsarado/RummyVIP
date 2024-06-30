@@ -32,27 +32,6 @@
     //   ]; //客服链接地址
     //   const time = 10000; //10秒更换一次客服链接
     </script>
-    <style>
-      .DailyMysteryBonus {
-        width: 100%;
-        height: 18rem;
-        background: url(./img/time.jpg) no-repeat center/100% auto;
-      }
-      .times {
-        position: fixed;
-        right: 0%;
-        top: 0;
-        bottom: 0;
-        margin: 8rem auto;
-        width: 6rem;
-        height: 4.3rem;
-        z-index: 999;
-      }
-
-      .aside-service {
-        right: 0.42rem;
-      }
-    </style>
   </head>
   <body>
       
@@ -74,13 +53,20 @@
     </div>
     <div class="content">
       <div class="down-btn">
-        <div onclick="DownSoft()" class="down">
+        <div id="androidDownload" onclick="DownSoft()" class="down">
           <a><img src="img/rvip-android-btn.png" alt="" /></a>
         </div>
-        <div onclick="DownSoft()" class="down">
+        <div id="iosDownload" onclick="DownSoft()" class="down">
           <a><img src="img/rvip-ios-btn.png" alt="" /></a>
         </div>
       </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
       <div class="top1">
         <img src="img/1.png" alt="" />
       </div>
