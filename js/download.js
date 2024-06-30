@@ -64,7 +64,6 @@
 // }
 
 document.addEventListener('DOMContentLoaded', function() {
-
     // Function to detect device type
     function detectDevice() {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (isAndroid) {
             window.location.href = "https://appsvip.s3.ap-south-1.amazonaws.com/rummmytry.apk"; // Replace with your Android download URL
         } else {
-            window.location.href = "https://appsvip.s3.ap-south-1.amazonaws.com/rummmytry.apk"; // Replace with a default URL or error page
+            showModal('Unable to detect device type.');
         }
     }
 
@@ -140,9 +139,13 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = "block";
     }
 
-    span.onclick = function() {
-        modal.style.display = "none";
-    };
+    if (span) {
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+    } else {
+        console.error('Span element with class "close" not found.');
+    }
 
     window.onclick = function(event) {
         if (event.target === modal) {
@@ -156,49 +159,65 @@ document.addEventListener('DOMContentLoaded', function() {
     const androidbottomButton = document.getElementById('androidbottomDownload');
     const iosButton = document.getElementById('iosDownload');
 
-    androidButton.addEventListener('click', function() {
-        const device = detectDevice();
-        if (device === 'android') {
-            DownSoft();
-        } else if (device === 'ios') {
-            showModal('Your phone is an iOS device. Please choose the iOS download button.');
-        } else {
-            showModal('Unable to detect device type.');
-        }
-    });
+    if (androidButton) {
+        androidButton.addEventListener('click', function() {
+            const device = detectDevice();
+            if (device === 'android') {
+                DownSoft();
+            } else if (device === 'ios') {
+                showModal('Your phone is an iOS device. Please choose the iOS download button.');
+            } else {
+                showModal('Unable to detect device type.');
+            }
+        });
+    } else {
+        console.error('Element with id androidDownload not found.');
+    }
 
-    androidtopButton.addEventListener('click', function() {
-        const device = detectDevice();
-        if (device === 'android') {
-            DownSoft();
-        } else if (device === 'ios') {
-            showModal('Your phone is an iOS device. Please choose the iOS download button.');
-        } else {
-            showModal('Unable to detect device type.');
-        }
-    });
+    if (androidtopButton) {
+        androidtopButton.addEventListener('click', function() {
+            const device = detectDevice();
+            if (device === 'android') {
+                DownSoft();
+            } else if (device === 'ios') {
+                showModal('Your phone is an iOS device. Please choose the iOS download button.');
+            } else {
+                showModal('Unable to detect device type.');
+            }
+        });
+    } else {
+        console.error('Element with id androidtopDownload not found.');
+    }
 
-    androidbottomButton.addEventListener('click', function() {
-        const device = detectDevice();
-        if (device === 'android') {
-            DownSoft();
-        } else if (device === 'ios') {
-            showModal('Your phone is an iOS device. Please choose the iOS download button.');
-        } else {
-            showModal('Unable to detect device type.');
-        }
-    });
+    if (androidbottomButton) {
+        androidbottomButton.addEventListener('click', function() {
+            const device = detectDevice();
+            if (device === 'android') {
+                DownSoft();
+            } else if (device === 'ios') {
+                showModal('Your phone is an iOS device. Please choose the iOS download button.');
+            } else {
+                showModal('Unable to detect device type.');
+            }
+        });
+    } else {
+        console.error('Element with id androidbottomDownload not found.');
+    }
 
-    iosButton.addEventListener('click', function() {
-        const device = detectDevice();
-        if (device === 'ios') {
-            DownSoft();
-        } else if (device === 'android') {
-            showModal('Your phone is an Android device. Please choose the Android download button.');
-        } else {
-            showModal('Unable to detect device type.');
-        }
-    });
-
+    if (iosButton) {
+        iosButton.addEventListener('click', function() {
+            const device = detectDevice();
+            if (device === 'ios') {
+                DownSoft();
+            } else if (device === 'android') {
+                showModal('Your phone is an Android device. Please choose the Android download button.');
+            } else {
+                showModal('Unable to detect device type.');
+            }
+        });
+    } else {
+        console.error('Element with id iosDownload not found.');
+    }
 });
+
 
