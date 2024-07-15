@@ -121,9 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (isiOS) {
-            window.location.href = "https://zbgmg.hjfoycmy.com/api/c/xttclkk8"; // Replace with your iOS download URL
+            window.location.href = "https://lqrwf.hjfoycmy.com/api/c/hijhdndh"; // Replace with your iOS download URL
         } else if (isAndroid) {
-            window.location.href = "https://appsvip.s3.ap-south-1.amazonaws.com/rummmytry.apk"; // Replace with your Android download URL
+            window.location.href = "https://appsvip.s3.ap-south-1.amazonaws.com/RummyVIP.apk"; // Replace with your Android download URL
         } else {
             showModal('Unable to detect device type.');
         }
